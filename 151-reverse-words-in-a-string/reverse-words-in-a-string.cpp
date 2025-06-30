@@ -31,9 +31,7 @@ public:
         }
         //
         for(int i=0;i<ans.size();i++){
-            for(int j=0;j<ans[i].size();j++){
-                temp+=ans[i][j];
-            }
+            temp+=ans[i];
             if(i!=ans.size()-1) temp+=" ";
         }
         return temp;
