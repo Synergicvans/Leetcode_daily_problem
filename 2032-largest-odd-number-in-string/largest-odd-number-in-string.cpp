@@ -5,6 +5,6 @@ public:
             if(int(num[i])%2!=0) return num;
             num.pop_back();
         }
-        return "";
+        return num;
     }
 };
