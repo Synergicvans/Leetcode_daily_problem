@@ -1,17 +1,14 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
+        int map1[256]={0};
+        int map2[256]={0};
+
         if(s.size()!=t.size()) return false;
-        
-        unordered_map<char,char>map1;
-        unordered_map<char,char>map2;
 
         for(int i=0;i<s.size();i++){
-
-            if(map1.count(s[i]) && map1[s[i]]!=t[i]) return false;
-            if(map2.count(t[i]) && map2[t[i]]!=s[i]) return false;
-            map1[s[i]]=t[i];
-            map2[t[i]]=s[i];
+            if(map1[s[i]]!=map2[t[i]]) return false;
+            map1[s[i]]=map2[t[i]]=i+1;
         }
         return true;
     }
