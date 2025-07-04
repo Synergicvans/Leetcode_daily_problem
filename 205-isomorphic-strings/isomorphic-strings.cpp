@@ -1,8 +1,8 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        int map1[256]={0};
-        int map2[256]={0};
+        unordered_map<char,int>map1;
+        unordered_map<char,int>map2;
 
         if(s.size()!=t.size()) return false;
 
