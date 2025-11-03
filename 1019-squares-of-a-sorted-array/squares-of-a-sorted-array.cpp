@@ -2,25 +2,25 @@ class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
         int n=nums.size();
-        vector<int> square(n,0);
         int start=0;
-        int end=nums.size()-1;
-        int square_Index=nums.size()-1;
-        while(start<=end){
-            int startarr=nums[start]*nums[start];
-            int temp = nums[end];
-            int endarr=pow(temp,2);
+        int end=n-1;
+        vector<int>ans(n,0);
+        int ansIndex=n-1;
 
-            if(startarr>endarr){
-                square[square_Index]=startarr;
+        while(start<=end){
+            int startSq=nums[start]*nums[start];
+            int endSq=nums[end]*nums[end];
+
+            if(startSq>endSq){
+                ans[ansIndex]=startSq;
                 start++;
             }
             else{
-                square[square_Index]=endarr;
+                ans[ansIndex]=endSq;
                 end--;
             }
-            square_Index--;
+            ansIndex--;
         }
-        return square;
+        return ans;
     }
 };
