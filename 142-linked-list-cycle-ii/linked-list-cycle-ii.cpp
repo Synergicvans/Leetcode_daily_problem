@@ -11,18 +11,16 @@ public:
     ListNode *detectCycle(ListNode *head) {
         ListNode* temp=head;
         unordered_map<ListNode*,int>mpp;
-        ListNode* loopnode;
-        bool check=false;
+        ListNode* loopnode=nullptr;
+        
         while(temp!=nullptr && temp->next!=nullptr){
             mpp[temp]++;
             if(mpp[temp]==2){
                 loopnode=temp;
-                check=true;
                 break;
             }
             temp=temp->next;
-        }
-        if(check) return loopnode;       
-        return nullptr;
+        }      
+        return loopnode;
     }
 };
