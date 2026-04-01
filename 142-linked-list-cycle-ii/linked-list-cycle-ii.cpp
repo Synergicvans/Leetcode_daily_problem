@@ -13,7 +13,7 @@ public:
         unordered_map<ListNode*,int>mpp;
         ListNode* loopnode=nullptr;
         
-        while(temp!=nullptr && temp->next!=nullptr){
+        while(temp!=nullptr){
             mpp[temp]++;
             if(mpp[temp]==2){
                 loopnode=temp;
